@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  calories: 9.99
+  fat: 9.99
+  protein: 9.99
+  sodium: 
+  sugar: 9.99
+  carbohydrate: 9.99
+
+two:
+  name: MyString
+  calories: 9.99
+  fat: 9.99
+  protein: 9.99
+  sodium: 
+  sugar: 9.99
+  carbohydrate: 9.99

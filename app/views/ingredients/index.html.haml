@@ -1,0 +1,31 @@
+%h1 Listing ingredients
+
+%table
+  %tr
+    %th Name
+    %th Calories
+    %th Fat
+    %th Protein
+    %th Sodium
+    %th Sugar
+    %th Carbohydrate
+    %th
+    %th
+    %th
+
+  - @ingredients.each do |ingredient|
+    %tr
+      %td= ingredient.name
+      %td= ingredient.calories
+      %td= ingredient.fat
+      %td= ingredient.protein
+      %td= ingredient.sodium
+      %td= ingredient.sugar
+      %td= ingredient.carbohydrate
+      %td= link_to 'Show', ingredient
+      %td= link_to 'Edit', edit_ingredient_path(ingredient)
+      %td= link_to 'Destroy', ingredient, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Ingredient', new_ingredient_path
