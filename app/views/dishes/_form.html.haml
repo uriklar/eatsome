@@ -1,0 +1,18 @@
+= simple_form_for @dish do |f|
+  - if @dish.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@dish.errors.count, "error")} prohibited this dish from being saved:"
+      %ul
+        - @dish.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.input :name
+  .field
+    = f.input :num_selected
+  .fields
+    = f.association :ingredients, as: :check_boxes
+
+
+  .actions
+    = f.submit 'Save'

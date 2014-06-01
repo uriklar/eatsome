@@ -1,9 +1,23 @@
 !!!
 %html{ 'ng-app' => "EatSome"}
-  %head
-    %title EatEnough
-    = stylesheet_link_tag    "application", :media => "all"
-    = javascript_include_tag "application"
-    = csrf_meta_tags
-  %body
-    = yield
+	%head
+		%title Eat Some
+		= stylesheet_link_tag    "application", :media => "all"
+		= javascript_include_tag "application"
+		= csrf_meta_tags
+		.navbar.navbar-inverse.navbar-fixed-top{ role: "navigation"}
+			.container
+				.navbar-header
+					%button{type: "button", class: "navbar-toggle", data: {toggle: "collapse", target: ".navbar-collapse"}}
+					%a.navbar-brand Eat Some
+				.collapse.navbar-collapse
+					%ul.nav.navbar-nav
+						%li.active
+							= link_to "Home", "#"
+						%li
+							= link_to "About", "#"
+						%li
+							= link_to "Contact", "#"
+	%body
+		.container
+			= yield

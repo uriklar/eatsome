@@ -1,0 +1,21 @@
+%h1 Listing dishes
+
+%table
+  %tr
+    %th Name
+    %th Num selected
+    %th
+    %th
+    %th
+
+  - @dishes.each do |dish|
+    %tr
+      %td= dish.name
+      %td= dish.num_selected
+      %td= link_to 'Show', dish
+      %td= link_to 'Edit', edit_dish_path(dish)
+      %td= link_to 'Destroy', dish, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Dish', new_dish_path

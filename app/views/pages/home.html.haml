@@ -1,5 +1,23 @@
-%div{ 'ng-controller' => "IngredientsCtrl"}
-	%div{ 'ingerdient-List' => true}
-/ %ul
-/ 	%li{'ng-repeat' => 'ingredient in ingredients'}
-/ 		{{ingredient.name}}
+.starter-tempate{ 'ng-controller' => 'AppCtrl'}
+
+	#page-title.panel.panel-default
+		%h1 Welcome to Eat Some
+		%p.lead Your one stop shop for healthy nutrition
+
+	%div{ 'ng-controller' => 'IngredientsCtrl'}
+		%h4 Select from list of ingredients:
+		%ul#ingredient-list
+			%li{ 'ng-repeat' => 'ingredient in ingredients', class: "{{sizeClass(ingredient.num_selected)}}", 'ng-click' => 'addToChosen(ingredient)'}
+				{{ingredient.name}}
+
+	%div{ 'ng-controller' => 'DishesCtrl'}
+		%h4 Select from list of dishes:
+		%ul#dish-list
+			%li{ 'ng-repeat' => 'dish in dishes', class: "{{sizeClass(dish.num_selected)}}",'ng-click' => 'addToChosen(dish)'}
+				{{dish.name}}
+
+	%ul#chosen-list.well
+		%li{ 'ng-repeat' => 'item in chosenItems'}
+			{{item.name}}
+
+

@@ -1,0 +1,20 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @dish.name
+%p
+  %b Num selected:
+  = @dish.num_selected
+
+%p
+  %b Ingredients:
+  %ul
+    - @dish.ingredients.each do |ingredient|
+      %li= ingredient.name
+
+
+
+= link_to 'Edit', edit_dish_path(@dish)
+\|
+= link_to 'Back', dishes_path

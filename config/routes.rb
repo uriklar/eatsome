@@ -1,8 +1,12 @@
 EatEnough::Application.routes.draw do
+  resources :dishes
+
+
   get "pages/home"
   root to: "pages#home"
 
-  resources :ingredients, defaults: {format: :json}
+  resources :ingredients
+  resources :dishes
 
 
   # The priority is based upon order of creation:

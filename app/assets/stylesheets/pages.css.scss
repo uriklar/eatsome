@@ -14,9 +14,19 @@
 	font-size: 28px;
 }
 
-.ingredient-list {
+#ingredient-list, #dish-list {
 	li {
 		display: inline;
 		margin-right: 5px;
+		cursor: pointer;
 	}
+}
+
+h4 {
+	text-decoration: underline;
+	color: green;
+}
+#page-title {
+	margin-top: 15px;
+	text-align: center;
 }

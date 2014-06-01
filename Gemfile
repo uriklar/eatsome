@@ -23,7 +23,6 @@ group :assets do
   gem 'haml'
   gem 'haml-rails'
   gem 'angularjs-rails'
-  gem 'twitter-bootstrap-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
