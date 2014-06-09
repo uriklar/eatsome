@@ -4,17 +4,27 @@
 		%h1 Welcome to Eat Some
 		%p.lead Your one stop shop for healthy nutrition
 
-	%div{ 'ng-controller' => 'IngredientsCtrl'}
-		%h4 Select from list of ingredients:
-		%ul#ingredient-list
-			%li{ 'ng-repeat' => 'ingredient in ingredients', class: "{{sizeClass(ingredient.num_selected)}}", 'ng-click' => 'addToChosen(ingredient)'}
-				{{ingredient.name}}
+	%h2 Parameters:
+	%span Total calories
+	%input{'ng-model' => 'totalCalories' }
+	%span Weight
+	%input{'ng-model' => 'weight' }
 
-	%div{ 'ng-controller' => 'DishesCtrl'}
-		%h4 Select from list of dishes:
-		%ul#dish-list
-			%li{ 'ng-repeat' => 'dish in dishes', class: "{{sizeClass(dish.num_selected)}}",'ng-click' => 'addToChosen(dish)'}
-				{{dish.name}}
+	%h2 Recommendations:
+	%p
+		%span Carbs: {{recommendedValues.carbohydrate()}}
+	%p
+		%span Protein:  {{recommendedValues.protein()}}
+
+	%h4 Select from list of ingredients:
+	%ul#ingredient-list
+		%li{ 'ng-repeat' => 'ingredient in visibleIngredients()', class: "{{sizeClass(ingredient.num_selected)}}", 'ng-click' => 'addToChosen(ingredient)'}
+			{{ingredient.name}}
+
+	%h4 Select from list of dishes:
+	%ul#dish-list
+		%li{ 'ng-repeat' => 'dish in visibleDishes()', class: "{{sizeClass(dish.num_selected)}}",'ng-click' => 'addToChosen(dish)'}
+			{{dish.name}}
 
 	%ul#chosen-list.well
 		%li{ 'ng-repeat' => 'item in chosenItems'}
